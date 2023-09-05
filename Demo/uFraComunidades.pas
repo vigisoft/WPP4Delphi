@@ -155,7 +155,8 @@ begin
   end;
 
 
-  frDemo.TWPPConnect1.GroupMsgAll(lbl_idGroup.Caption);end;
+  frDemo.TWPPConnect1.GroupMsgAll(lbl_idGroup.Caption);
+end;
 
 procedure TframeComunidades.btnMudarImagemGrupoClick(Sender: TObject);
 var
@@ -227,7 +228,8 @@ begin
     Abort;
   end;
 
-  frDemo.TWPPConnect1.GroupMsgAdminOnly(lbl_idGroup.Caption);end;
+  frDemo.TWPPConnect1.GroupMsgAdminOnly(lbl_idGroup.Caption);
+end;
 
 procedure TframeComunidades.btnCancelaLinkClick(Sender: TObject);
 begin
@@ -320,7 +322,8 @@ end;
 
 procedure TframeComunidades.btnGerarLinkConviteClick(Sender: TObject);
 begin
-  if not frDemo.TWPPConnect1.Auth then    Exit;
+  if not frDemo.TWPPConnect1.Auth then
+    Exit;
 
   if lbl_idGroup.caption = '' then
   begin
@@ -328,7 +331,8 @@ begin
     Abort;
   end;
 
-  frDemo.TWPPConnect1.GetGroupInviteLink(lbl_idGroup.Caption);
+  frDemo.TWPPConnect1.GetGroupInviteLink(lbl_idGroup.Caption);
+
 end;
 
 procedure TframeComunidades.btnListarComunidadesClick(Sender: TObject);
