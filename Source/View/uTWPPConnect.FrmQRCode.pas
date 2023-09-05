@@ -94,7 +94,7 @@ procedure TFrmQRCode.FormCloseQuery(Sender: TObject; var CanClose: Boolean);
 begin
   if not FpodeFechar then
   Begin
-    if (MessageBox(handle,PWideChar(Text_FrmQRCode_OnCLose),PWideChar(Self.Caption),MB_YESNO) <> mrYes) then
+    if (MessageBox(handle,PWideChar(Text_FrmQRCode_OnCLose),PWideChar(Text_FrmQRCode_Caption),MB_YESNO) <> mrYes) then
     Begin
       CanClose := False;
       Exit;
@@ -123,7 +123,7 @@ begin
 
 
   FTimerGetQrCode          := TTimer.Create(nil);
-  FTimerGetQrCode.Interval := 300;
+  FTimerGetQrCode.Interval := 600;
   FTimerGetQrCode.Enabled  := False;
   Hide;
 
@@ -194,7 +194,7 @@ procedure TFrmQRCode.ShowForm(PFormQrCodeType: TFormQrCodeType);
 begin
   FFormQrCodeType:=  PFormQrCodeType;
   FShow := False;
-  FTimerGetQrCode.Interval := 300;
+  FTimerGetQrCode.Interval := 600;
   if FFormQrCodeType = Ft_Desktop Then
   begin
     Show;

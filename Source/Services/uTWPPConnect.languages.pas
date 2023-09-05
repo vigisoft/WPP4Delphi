@@ -105,6 +105,7 @@ begin
   SetResourceString(@Text_FrmQRCode_CaptionStart          , 'Carregando QR-Code...');
   SetResourceString(@Text_FrmQRCode_CaptionSucess         , 'Aponte seu celular agora!');
   SetResourceString(@Text_FrmQRCode_OnCLose               , 'Cancelar entrada no servidor de serviço?');
+  SetResourceString(@Text_FrmQRCode_Caption               , 'Leitura do QR-Code');
   SetResourceString(@MSG_ExceptPhoneNumberError           , 'Número inválido');
   SetResourceString(@MSG_ExceptAlterDesigner              , 'Não é possível modificar em Modo Designer');
   SetResourceString(@MSG_ExceptAlterInicialized           , 'Método não pode ser modificado após o compontente ser inicializado');
@@ -192,7 +193,8 @@ begin
   SetResourceString(@Text_FrmClose_WarningClose           , 'Do you want to close the application?');
   SetResourceString(@Text_FrmQRCode_CaptionStart          , 'Loading QRCode...');
   SetResourceString(@Text_FrmQRCode_CaptionSucess         , 'Point your phone now!');
-  SetResourceString(@Text_FrmQRCode_OnCLose               , 'Cancel service server? connection');
+  SetResourceString(@Text_FrmQRCode_OnCLose               , 'Cancel service server connection?');
+  SetResourceString(@Text_FrmQRCode_Caption               , 'QR-Code Reader');
   SetResourceString(@MSG_ExceptPhoneNumberError           , 'Invalid Number');
   SetResourceString(@MSG_ExceptAlterDesigner              , 'It is not possible to modify in Designer Mode');
   SetResourceString(@MSG_ExceptAlterInicialized           , 'Method Cannot Be Modified After TWPPConnect has been Initialized');
@@ -282,6 +284,7 @@ begin
   SetResourceString(@Text_FrmQRCode_CaptionStart          , 'Capturando QRCode...');
   SetResourceString(@Text_FrmQRCode_CaptionSucess         , '¡Apunte su teléfono ahora!');
   SetResourceString(@Text_FrmQRCode_OnCLose               , '¿Darse de baja del servidor de servicio?');
+  SetResourceString(@Text_FrmQRCode_Caption               , 'QR-Code');
   SetResourceString(@MSG_ExceptPhoneNumberError           , 'Número inválido');
   SetResourceString(@MSG_ExceptAlterDesigner              , 'No se puede modificar en modo de desarrollo');
   SetResourceString(@MSG_ExceptAlterInicialized           , 'El método no se puede modificar después de que TWPPConnect se haya inicializado');
