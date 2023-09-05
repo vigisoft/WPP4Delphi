@@ -45,7 +45,6 @@ Type
   Private
     Procedure LanguageDefault;
     procedure LanguageEnglish;
-    procedure LanguageFarsi;
     procedure LanguageEspanol;
   Public
     class procedure SetResourceString(xOldResourceString: PResStringRec; xValueChanged: PChar);

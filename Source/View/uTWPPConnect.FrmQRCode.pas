@@ -94,7 +94,7 @@ procedure TFrmQRCode.FormCloseQuery(Sender: TObject; var CanClose: Boolean);
 begin
   if not FpodeFechar then
   Begin
-    if MessageDlg(Text_FrmQRCode_OnCLose, mtConfirmation, [mbYes, mbNo], 0) <> mrYes then
+    if (MessageBox(handle,PWideChar(Text_FrmQRCode_OnCLose),PWideChar(Self.Caption),MB_YESNO) <> mrYes) then
     Begin
       CanClose := False;
       Exit;

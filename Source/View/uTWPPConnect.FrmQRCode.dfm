@@ -2,11 +2,12 @@ object FrmQRCode: TFrmQRCode
   Left = 0
   Top = 0
   BorderIcons = [biSystemMenu]
-  BorderStyle = bsDialog
-  Caption = 'TWPPConnect - Carregando QRCode...'
+  BorderStyle = bsToolWindow
+  Caption = 'Carregando QR-Code...'
   ClientHeight = 304
   ClientWidth = 311
   Color = clBtnFace
+  DoubleBuffered = True
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
@@ -14,7 +15,7 @@ object FrmQRCode: TFrmQRCode
   Font.Style = []
   FormStyle = fsStayOnTop
   OldCreateOrder = False
-  Position = poScreenCenter
+  Position = poOwnerFormCenter
   OnClose = FormClose
   OnCloseQuery = FormCloseQuery
   OnCreate = FormCreate
