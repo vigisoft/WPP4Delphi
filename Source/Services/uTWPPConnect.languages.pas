@@ -43,20 +43,37 @@ Type
 
   TTranslatorInject = Class(TPersistent)
   Private
-     Procedure LanguageDefault;
-     procedure LanguageEnglish;
-
-     class procedure SetResourceString(xOldResourceString: PResStringRec; xValueChanged: PChar);
+    Procedure LanguageDefault;
+    procedure LanguageEnglish;
     procedure LanguageFarsi;
     procedure LanguageEspanol;
   Public
+    class procedure SetResourceString(xOldResourceString: PResStringRec; xValueChanged: PChar);
     Procedure SetTranslator(Const PLanguage: TLanguageInject);
   End;
 
+  procedure SetTranslate(AResourceString: PResStringRec; AValue: String);
 
 implementation
-{ LTranslatorInject }
 
+{
+ Method to dynamically change default messages.
+
+ How to use:
+
+  ShowMessage('Old: ' +  uTWPPConnect.Constant.Text_FrmConsole_Caption);
+  uTWPPConnect.languages.SetTranslate(@Text_FrmConsole_Caption,IfThen(Application.Title.IsEmpty,Self.Caption,Application.Title));
+  ShowMessage('New: ' +  uTWPPConnect.Constant.Text_FrmConsole_Caption);
+}
+procedure SetTranslate(AResourceString: PResStringRec; AValue: String);
+begin
+  try
+    TTranslatorInject.SetResourceString(AResourceString, PWideChar(AValue));
+  except
+  end;
+end;
+
+{ LTranslatorInject }
 
 class procedure TTranslatorInject.SetResourceString(
   xOldResourceString: PResStringRec; xValueChanged: PChar);
@@ -72,55 +89,55 @@ procedure TTranslatorInject.LanguageDefault;
 begin
   SetResourceString(@MSG_ConfigCEF_ExceptNotFoundPATH     , 'Não é possível realizar essa operação após a inicialização do componente');
   SetResourceString(@MSG_ConfigCEF_ExceptConnection       , 'Erro ao conectar com componente');
-  SetResourceString(@MSG_ConfigCEF_ExceptBrowse           , 'Erro ao criar browser no CEF');
-  SetResourceString(@MSG_ConfigCEF_ExceptConnetServ       , 'Você não está conectado ao Servidor de serviço');
+  SetResourceString(@MSG_ConfigCEF_ExceptBrowse           , 'Erro ao criar o navegador');
+  SetResourceString(@MSG_ConfigCEF_ExceptConnetServ       , 'Você não está conectado ao serviço');
   SetResourceString(@MSG_ConfigCEF_ExceptConsoleNaoPronto , 'Console ainda não obteve os comandos de INJECT JS');
   SetResourceString(@MSG_ConfigCEF_ExceptVersaoErrada     , 'Sua versão do CEF4 não é compatível, por favor, atualize suas biblioteca em https://github.com/salvadordf/CEF4Delphi' + slinebreak + 'Versão requerida: %s' + slinebreak + 'Versão identificada: %s');
   SetResourceString(@MSG_ExceptSetBatteryLow              , 'O valor deve estar entre 5 e 90');
   SetResourceString(@MSG_ExceptOnAlterQrCodeStyle         , 'Não é possível realizar essa operação após a inicialização do componente');
-  SetResourceString(@MSG_ExceptConfigVersaoCompInvalida   , 'Sua versão do componente TWPPConnect não é compatível com o novo JavaScript, por favor, atualize suas biblioteca em http://www.TWPPConnect.com.br/');
+  SetResourceString(@MSG_ExceptConfigVersaoCompInvalida   , 'Sua versão do componente não é compatível com o novo JavaScript, por favor, atualize suas biblioteca em http://www.TWPPConnect.com.br/');
   SetResourceString(@MSG_ExceptUpdate                     , 'Erro de servidor WEB. Não foi possível receber a atualização do JS.ABR');
   SetResourceString(@MSG_WarningDuplicityDetected         , 'Enviando o mesmo comando em um intervalo pequeno');
   SetResourceString(@MSG_ExceptJS_ABRUnknown              , 'Retorno JS.ABR não conhecido');
-  SetResourceString(@MSG_ExceptNotAssignedOnGetQrCode     , 'OnGetQrCode não foi definido');
+  SetResourceString(@MSG_ExceptNotAssignedOnGetQrCode     , 'Método para captura do QR-Code não encontrado');
   SetResourceString(@Text_FrmClose_Caption                , 'Aguarde.. Finalizando o serviço..');
   SetResourceString(@Text_FrmClose_Label                  , 'Finalizando todas as threads com segurança');
-  SetResourceString(@Text_FrmClose_WarningClose           , 'Deseja Finalizar a aplicação?');
-  SetResourceString(@Text_FrmQRCode_CaptionStart          , 'Carregando QR Code...');
+  SetResourceString(@Text_FrmClose_WarningClose           , 'Deseja finalizar a aplicação?');
+  SetResourceString(@Text_FrmQRCode_CaptionStart          , 'Carregando QR-Code...');
   SetResourceString(@Text_FrmQRCode_CaptionSucess         , 'Aponte seu celular agora!');
-  SetResourceString(@Text_FrmQRCode_OnCLose               , 'Cancelar entrada ao Servidor de serviço?');
+  SetResourceString(@Text_FrmQRCode_OnCLose               , 'Cancelar entrada no servidor de serviço?');
   SetResourceString(@MSG_ExceptPhoneNumberError           , 'Número inválido');
   SetResourceString(@MSG_ExceptAlterDesigner              , 'Não é possível modificar em Modo Designer');
-  SetResourceString(@MSG_ExceptAlterInicialized           , 'Método não pode ser modificado após TWPPConnect Inicializado');
+  SetResourceString(@MSG_ExceptAlterInicialized           , 'Método não pode ser modificado após o compontente ser inicializado');
   SetResourceString(@MSG_ExceptCOntactNotFound            , 'Não existem contatos a serem exportados');
   SetResourceString(@MSG_ExceptCOntactSaveFile            , 'Não foi possivel salvar os contatos em %s');
-  SetResourceString(@MSG_ExceptErrorLocateForm            , 'Erro ao localizar FORM');
+  SetResourceString(@MSG_ExceptErrorLocateForm            , 'Erro ao localizar o formulário');
   SetResourceString(@MSG_ExceptPath                       , 'O caminho %s é inválido');
-  SetResourceString(@MSG_ExceptGlobalCef                  , 'Classe GLOBALCEF não definida no DPR');
+  SetResourceString(@MSG_ExceptGlobalCef                  , 'O Chrome NÃO ESTÁ habilitado no projeto');
   SetResourceString(@MSG_WarningClosing                   , 'Aguarde... Finalizando aplicação');
   SetResourceString(@MSG_WarningErrorFile                 , 'Erro no arquivo repassado (%s)');
   SetResourceString(@MSG_ExceptMisc                       , 'Erro Desconhecido');
   SetResourceString(@Text_FrmConsole_Caption              , 'Componente TWPPConnect Brasil');
   SetResourceString(@Text_FrmConsole_LblMsg               , 'Aguarde.. Inicializando comunicação');
-  SetResourceString(@MSG_WarningClassUnknown              , 'Classe Desconhecida');
+  SetResourceString(@MSG_WarningClassUnknown              , 'Classe desconhecida');
   SetResourceString(@MSG_Exceptlibeay32dll                , 'Seu computador não possui as DLLs "libeay32.dll" e "ssleay32.dll". Para continuar coloque as DLL na pasta system ou dentro do diretório da aplicação.');
-  SetResourceString(@Text_Vcard_Comments1                 , 'Exportado do Componente TWPPConnect em' );
-  SetResourceString(@Text_Vcard_Comments2                 , 'Contato Silenciado');
+  SetResourceString(@Text_Vcard_Comments1                 , 'Exportado do VS VAI em' );
+  SetResourceString(@Text_Vcard_Comments2                 , 'Contato silenciado');
   SetResourceString(@Text_Vcard_Comments3                 , 'Capturado em:');
   SetResourceString(@MSG_WarningQrCodeStart1              , 'A sessão anterior ainda está sendo finalizada, tente novamente mais tarde');
-  SetResourceString(@Text_Status_Serv_Initialized         , 'Conectado com sucesso ao Servidor de serviço');
-  SetResourceString(@Text_Status_Serv_Initializing        , 'Inicializando Servidor de serviço');
-  SetResourceString(@Text_Status_Serv_Disconnected        , 'Não Conectado ao Servidor de serviço e TWPPConnect');
-  SetResourceString(@Text_Status_Serv_Disconnecting       , 'Desconectado do Servidor de serviço e TWPPConnect ');
-  SetResourceString(@Text_Status_Serv_Connected           , 'Servidor de serviço Conectado');
-  SetResourceString(@Text_Status_Serv_ConnectedDown       , 'Sessão finalizada via Celular');
-  SetResourceString(@Text_Status_Serv_Connecting          , 'Aguarde, Conectando ao Servidor de serviço');
-  SetResourceString(@Text_Status_Serv_ConnectingNoPhone   , 'Erro ao conectar, Telefone desligado');
-  SetResourceString(@Text_Status_Serv_ConnectingReaderQR  , 'Aguardando leitura QR Code');
-  SetResourceString(@Text_Status_Serv_TimeOut             , 'Erro ao conectar (TimeOut)');
-  SetResourceString(@Text_Status_Serv_Destroying          , 'Destruindo e fechando TWPPConnect');
-  SetResourceString(@Text_Status_Serv_Destroy             , 'TWPPConnect finalizado');
-  SetResourceString(@Text_Status_Serv_Rebooting           , 'Reiniciando Chromium');
+  SetResourceString(@Text_Status_Serv_Initialized         , 'Iniciado');
+  SetResourceString(@Text_Status_Serv_Initializing        , 'Iniciando...');
+  SetResourceString(@Text_Status_Serv_Disconnected        , 'Desconectado');
+  SetResourceString(@Text_Status_Serv_Disconnecting       , 'Desconectando...');
+  SetResourceString(@Text_Status_Serv_Connected           , 'Conectado');
+  SetResourceString(@Text_Status_Serv_ConnectedDown       , 'Desconexão remota');
+  SetResourceString(@Text_Status_Serv_Connecting          , 'Conectando...');
+  SetResourceString(@Text_Status_Serv_ConnectingNoPhone   , 'Aparelho desligado');
+  SetResourceString(@Text_Status_Serv_ConnectingReaderQR  , 'Aguardando a leitura do QR-Code...');
+  SetResourceString(@Text_Status_Serv_TimeOut             , 'Tempo excedido');
+  SetResourceString(@Text_Status_Serv_Destroying          , 'Encerrando...');
+  SetResourceString(@Text_Status_Serv_Destroy             , 'Encerrado');
+  SetResourceString(@Text_Status_Serv_Rebooting           , 'Reiniciando...');
   SetResourceString(@MSG_WarningNothingtoSend             , 'Não existe nenhum conteúdo a ser enviado na mensagem');
 
   SetResourceString(@MSG_Except_Data_TypeObj              , 'Tipo de objeto não é compatível');
@@ -152,40 +169,6 @@ begin
   SetResourceString(@Text_FrmConfigNetWork_BntOK                      , 'Salvar');
   SetResourceString(@Text_FrmConfigNetWork_BntCancel                  , 'Cancelar');
   SetResourceString(@Text_FrmConfigNetWork_QuestionSave               , 'Deseja realmente aplicar essas configurações?');
-//  SetResourceString(@Text_FrmClose_WarningClose           , '');
-//  SetResourceString(@Text_FrmClose_WarningClose           , '');
-//  SetResourceString(@Text_FrmClose_WarningClose           , '');
-//  SetResourceString(@Text_FrmClose_WarningClose           , '');
-//  SetResourceString(@Text_FrmClose_WarningClose           , '');
-//  SetResourceString(@Text_FrmClose_WarningClose           , '');
-//  SetResourceString(@Text_FrmClose_WarningClose           , '');
-//  SetResourceString(@Text_FrmClose_WarningClose           , '');
-//  SetResourceString(@Text_FrmClose_WarningClose           , '');
-//  SetResourceString(@Text_FrmClose_WarningClose           , '');
-//  SetResourceString(@Text_FrmClose_WarningClose           , '');
-//  SetResourceString(@Text_FrmClose_WarningClose           , '');
-//  SetResourceString(@Text_FrmClose_WarningClose           , '');
-//  SetResourceString(@Text_FrmClose_WarningClose           , '');
-//  SetResourceString(@Text_FrmClose_WarningClose           , '');
-//  SetResourceString(@Text_FrmClose_WarningClose           , '');
-//  SetResourceString(@Text_FrmClose_WarningClose           , '');
-//  SetResourceString(@Text_FrmClose_WarningClose           , '');
-//  SetResourceString(@Text_FrmClose_WarningClose           , '');
-//  SetResourceString(@Text_FrmClose_WarningClose           , '');
-//  SetResourceString(@Text_FrmClose_WarningClose           , '');
-//  SetResourceString(@Text_FrmClose_WarningClose           , '');
-//  SetResourceString(@Text_FrmClose_WarningClose           , '');
-//  SetResourceString(@Text_FrmClose_WarningClose           , '');
-//  SetResourceString(@Text_FrmClose_WarningClose           , '');
-//  SetResourceString(@Text_FrmClose_WarningClose           , '');
-//  SetResourceString(@Text_FrmClose_WarningClose           , '');
-//  SetResourceString(@Text_FrmClose_WarningClose           , '');
-//  SetResourceString(@Text_FrmClose_WarningClose           , '');
-//  SetResourceString(@Text_FrmClose_WarningClose           , '');
-//  SetResourceString(@Text_FrmClose_WarningClose           , '');
-//  SetResourceString(@Text_FrmClose_WarningClose           , '');
-//  SetResourceString(@Text_FrmClose_WarningClose           , '');
-//  SetResourceString(@Text_FrmClose_WarningClose           , '');
 end;
 
 
@@ -359,23 +342,11 @@ begin
   SetResourceString(@Text_FrmConfigNetWork_QuestionSave               , '¿Realmente quieres aplicar esta configuración?');
 end;
 
-procedure TTranslatorInject.LanguageFarsi;
-begin
-//
-end;
-
-{
-procedure TTranslatorInject.LanguageAfrikaans;
-begin
-end;
-}
-
 procedure TTranslatorInject.SetTranslator(Const PLanguage: TLanguageInject);
 begin
   LanguageDefault;
   case PLanguage of
      Tl_English     : LanguageEnglish;
-     TL_Farsi       : LanguageFarsi;
      Tl_Espanol     : LanguageEspanol;
   end;
 end;
