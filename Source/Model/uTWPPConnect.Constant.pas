@@ -439,6 +439,7 @@ resourcestring
   Text_FrmQRCode_CaptionStart          = '';
   Text_FrmQRCode_CaptionSucess         = '';
   Text_FrmQRCode_OnCLose               = '';
+  Text_FrmQRCode_Caption               = '';
   MSG_ExceptPhoneNumberError           = '';
   MSG_ExceptAlterDesigner              = '';
   MSG_ExceptCOntactNotFound            = '';
@@ -502,22 +503,6 @@ resourcestring
   Text_FrmConfigNetWork_BntCancel        = '';
   Text_FrmConfigNetWork_QuestionSave     = '';
   Text_FrmConfigNetWork_PrtocolLbl       = '';
-//  Text_FrmQRCode_OnCLose                 = '';
-//  Text_FrmQRCode_OnCLose                 = '';
-//  Text_FrmQRCode_OnCLose                 = '';
-//  Text_FrmQRCode_OnCLose                 = '';
-//  Text_FrmQRCode_OnCLose                 = '';
-//  Text_FrmQRCode_OnCLose                 = '';
-//  Text_FrmQRCode_OnCLose                 = '';
-//  Text_FrmQRCode_OnCLose                 = '';
-//  Text_FrmQRCode_OnCLose                 = '';
-//  Text_FrmQRCode_OnCLose                 = '';
-//  Text_FrmQRCode_OnCLose                 = '';
-//  Text_FrmQRCode_OnCLose                 = '';
-//  Text_FrmQRCode_OnCLose                 = '';
-//  Text_FrmQRCode_OnCLose                 = '';
-//  Text_FrmQRCode_OnCLose                 = '';
-
 type
 
     TLanguageInject       = (TL_Portugues_BR=0, TL_English=1, TL_Espanol=2, TL_Farsi=3, TL_Italian=4, TL_German=5, TL_French=6,
