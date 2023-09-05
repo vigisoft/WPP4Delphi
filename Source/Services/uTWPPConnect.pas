@@ -4407,7 +4407,7 @@ begin
     CheckWppCrash(TWppCrashClass(PReturnClass));
   end;
 
-  if PTypeHeader in [Th_Connecting, Th_Disconnecting, Th_ConnectingNoPhone, Th_getQrCodeForm, Th_getQrCodeForm, TH_Destroy, Th_Destroying]  then
+  if PTypeHeader in [Th_Connecting, Th_ConnectingFt_HTTP, Th_ConnectingFt_Desktop, Th_Disconnecting, Th_ConnectingNoPhone, Th_getQrCodeForm, Th_getQrCodeForm, TH_Destroy, Th_Destroying]  then
   begin
     case PTypeHeader of
       Th_Connecting            : Fstatus := Server_Connecting;
@@ -4416,6 +4416,7 @@ begin
       TH_Destroy               : Fstatus := Inject_Destroy;
       Th_Destroying            : Fstatus := Inject_Destroying;
       Th_ConnectingFt_Desktop,
+      Th_ConnectingFt_HTTP,
       Th_getQrCodeForm         : Fstatus := Server_ConnectingReaderCode;
     end;
     if Assigned(fOnGetStatus ) then
