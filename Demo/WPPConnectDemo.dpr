@@ -95,8 +95,21 @@ begin
     end;
   end;
 
-  GlobalCEFApp.DisableBlinkFeatures := 'AutomationControlled';
- 
+  // Configuracoes gerais...
+  GlobalCEFApp.DisableBlinkFeatures        := 'AutomationControlled';
+  GlobalCEFApp.IgnoreCertificateErrors     := True;
+  GlobalCEFApp.FastUnload                  := True;
+  GlobalCEFApp.DisableSafeBrowsing         := True;
+  GlobalCEFApp.DisableWebSecurity          := True;
+  GlobalCEFApp.DisableChromeLoginPrompt    := True;
+  GlobalCEFApp.AllowRunningInsecureContent := True;
+  GlobalCEFApp.EnablePrintPreview          := False;
+  GlobalCEFApp.HyperlinkAuditing           := False;
+
+  // Vamos apagar os caches, para que toda vez que iniciar o Demo, ele ter que conectar no WhatsApp
+  GlobalCEFApp.DeleteCache                 := True;
+  GlobalCEFApp.DeleteCookies               := True;
+
   {start service cef4delphi chromium}
   If not GlobalCEFApp.StartMainProcess then Exit;
 
