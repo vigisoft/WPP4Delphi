@@ -167,7 +167,7 @@ type
     FOnRetErrorWhiteScreen: TOnRetErrorWhiteScreen;
     FOnGetIsLogout: TGetIsLogout;
     FAuthenticated: boolean;
-	
+
 	FInjectJSSecRemaining: Integer;
     FOnGet_IsLidMigrated: TGetIsLidMigrated;
     FOnGet_PnLidEntry: TGetPnLidEntry;
@@ -483,7 +483,7 @@ type
     Procedure FormQrCodeStart(PViewForm:Boolean = true);
     Procedure FormQrCodeStop;
     Procedure FormConsoleStart; // exibe/oculta formConsole runtime 27-10-25 TP
-    procedure Int_OnNotificationCenter(PTypeHeader: TTypeHeader; PValue: String; Const PReturnClass : TObject= nil); virtual; // permite override 31-10-25 TP		
+    procedure Int_OnNotificationCenter(PTypeHeader: TTypeHeader; PValue: String; Const PReturnClass : TObject= nil); virtual; // permite override 31-10-25 TP
     Procedure FormQrCodeReloader;
     Function  Auth(PRaise: Boolean = true): Boolean;
     procedure console_clear;
@@ -768,7 +768,7 @@ begin
   if (pos('@lid', AnsiLowerCase(vContato)) = 0) then
     if (pos('@', vContato) = 0)  then
       vContato := SomenteNumero(vContato);
-      
+
   {vContato := AjustNumber.FormatIn(vContato);
   if pos('@', vContato) = 0 then
   Begin
@@ -869,11 +869,11 @@ begin
     Int_OnErroInterno(Self, MSG_WarningNothingtoSend, vContato);
     Exit;
   end;
-  
+
   if (pos('@lid', AnsiLowerCase(vContato)) = 0) then
     if pos('@', vContato) = 0 then
       vContato := SomenteNumero(vContato);
-      
+
   {vContato := AjustNumber.FormatIn(vContato);
   if pos('@', vContato) = 0 then
   Begin
@@ -927,7 +927,7 @@ begin
   if not Assigned(FrmConsole) then
      Exit;
   PNumberPhone := AjustNumber.FormatIn(PNumberPhone);
-  
+
   if pos('@', PNumberPhone) = 0 then
   Begin
     Int_OnErroInterno(Self, MSG_ExceptPhoneNumberError, PNumberPhone);
@@ -976,7 +976,7 @@ begin
   if not Assigned(FrmConsole) then
     Exit;
   PNumberPhone := AjustNumber.FormatIn(PNumberPhone);
-  
+
   if pos('@', PNumberPhone) = 0 then
   Begin
     Int_OnErroInterno(Self, MSG_ExceptPhoneNumberError, PNumberPhone);
@@ -1002,14 +1002,14 @@ begin
   //Marcelo 18/07/2022
   if Application.Terminated then
     Exit;
-    
+
   if not Assigned(FrmConsole) then
     Exit;
-    
-  if (pos('@lid', AnsiLowerCase(PNumberPhone)) = 0) then    
+
+  if (pos('@lid', AnsiLowerCase(PNumberPhone)) = 0) then
     if pos('@', PNumberPhone) = 0 then
       PNumberPhone := SomenteNumero(PNumberPhone);
-      
+
   {PNumberPhone := AjustNumber.FormatIn(PNumberPhone);
   if pos('@', PNumberPhone) = 0 then
   Begin
@@ -1038,13 +1038,13 @@ begin
   if not Assigned(FrmConsole) then
      Exit;
   PNumberPhone := AjustNumber.FormatIn(PNumberPhone);
-  
+
   if pos('@', PNumberPhone) = 0 then
   Begin
     Int_OnErroInterno(Self, MSG_ExceptPhoneNumberError, PNumberPhone);
     Exit;
   end;
-  
+
   lThread := TThread.CreateAnonymousThread(procedure
       begin
         TThread.Synchronize(nil, procedure
@@ -1222,14 +1222,14 @@ begin
      Exit;
   if not Assigned(FrmConsole) then
      Exit;
-     
+
   {PGroupNumbers := AjustNumber.FormatIn(PGroupNumbers);
   if pos('@', PGroupNumbers) = 0 then
   Begin
     Int_OnErroInterno(Self, MSG_ExceptPhoneNumberError, PParticipantNumber);
     Exit;
   end;}
-  
+
   if Trim(PcommunityName) = '' then
   begin
     Int_OnErroInterno(Self, MSG_WarningNothingtoSend, PcommunityName);
@@ -1269,7 +1269,7 @@ begin
   if not Assigned(FrmConsole) then
      Exit;
   PParticipantNumber := AjustNumber.FormatIn(PParticipantNumber);
-  
+
   if pos('@', PParticipantNumber) = 0 then
   Begin
     Int_OnErroInterno(Self, MSG_ExceptPhoneNumberError, PParticipantNumber);
@@ -1411,11 +1411,11 @@ begin
      Exit;
   if not Assigned(FrmConsole) then
      Exit;
-     
+
   if (pos('@lid', AnsiLowerCase(PID)) = 0) then
     if pos('@', PID) = 0 then
       PID := SomenteNumero(PID);
-    
+
   if Trim(PID) = '' then
   begin
     Int_OnErroInterno(Self, MSG_WarningNothingtoSend, PID);
@@ -1603,11 +1603,11 @@ begin
     Exit;
   if not Assigned(FrmConsole) then
     Exit;
-    
+
   if (pos('@lid', AnsiLowerCase(PNumberPhone)) = 0) then
     if pos('@', PNumberPhone) = 0 then
       PNumberPhone := SomenteNumero(PNumberPhone);
-      
+
   {PNumberPhone := AjustNumber.FormatIn(PNumberPhone);
   if (pos('@', PNumberPhone) = 0) then
   Begin
@@ -1676,11 +1676,11 @@ begin
     Int_OnErroInterno(Self, MSG_WarningNothingtoSend, vContato);
     Exit;
   end;
-  
+
   if (pos('@lid', AnsiLowerCase(vContato)) = 0) then
     if pos('@', vContato) = 0 then
       vContato := SomenteNumero(vContato);
-      
+
   {vContato := AjustNumber.FormatIn(vContato);
   if pos('@', vContato) = 0 then
   Begin
@@ -1746,11 +1746,11 @@ begin
     Int_OnErroInterno(Self, MSG_WarningNothingtoSend, vContato);
     Exit;
   end;
-  
+
   if (pos('@lid', AnsiLowerCase(vContato)) = 0) then
     if pos('@', vContato) = 0 then
       vContato := SomenteNumero(vContato);
-      
+
   {vContato := AjustNumber.FormatIn(vContato);
   if pos('@', vContato) = 0 then
   Begin
@@ -1784,7 +1784,7 @@ begin
     Exit;
   end;
   PIDContato := AjustNumber.FormatIn(PIDContato);
-  
+
   if pos('@', PIDContato) = 0 then
   Begin
     Int_OnErroInterno(Self, MSG_ExceptPhoneNumberError, PIDContato);
@@ -1817,11 +1817,11 @@ begin
     Int_OnErroInterno(Self, MSG_WarningNothingtoSend, vContato);
     Exit;
   end;
-  
+
   if (pos('@lid', AnsiLowerCase(vContato)) = 0) then
     if pos('@', vContato) = 0 then
       vContato := SomenteNumero(vContato);
-      
+
   {vContato := AjustNumber.FormatIn(vContato);
   if pos('@', vContato) = 0 then
   Begin
@@ -2694,11 +2694,11 @@ begin
     Exit;
   if not Assigned(FrmConsole) then
     Exit;
-    
-  if (pos('@lid', AnsiLowerCase(vTelefone)) = 0) then    
+
+  if (pos('@lid', AnsiLowerCase(vTelefone)) = 0) then
     if pos('@', vTelefone) = 0 then
       vTelefone := SomenteNumero(vTelefone);
-    
+
   //Marcelo 17/08/2022
   {vTelefone := AjustNumber.FormatIn(vTelefone);
   if pos('@', vTelefone) = 0 then
@@ -2843,11 +2843,11 @@ begin
     Exit;
   if not Assigned(FrmConsole) then
     Exit;
-    
-  if (pos('@lid', AnsiLowerCase(phoneNumber)) = 0) then  
+
+  if (pos('@lid', AnsiLowerCase(phoneNumber)) = 0) then
     if pos('@', phoneNumber) = 0 then
       phoneNumber := SomenteNumero(phoneNumber);
-      
+
   {phoneNumber := AjustNumber.FormatIn(phoneNumber);
   if pos('@', phoneNumber) = 0 then
   Begin
@@ -2907,7 +2907,7 @@ begin
   if not Assigned(FrmConsole) then
      Exit;
 
-  if (pos('@lid', AnsiLowerCase(vID)) = 0) then     
+  if (pos('@lid', AnsiLowerCase(vID)) = 0) then
     if pos('@', vID) = 0 then
       vID := SomenteNumero(vID);
 
@@ -2996,7 +2996,7 @@ begin
   if not Assigned(FrmConsole) then
      Exit;
 
-  if (pos('@lid', AnsiLowerCase(vID)) = 0) then        
+  if (pos('@lid', AnsiLowerCase(vID)) = 0) then
     if pos('@', vID) = 0 then
       vID := SomenteNumero(vID);
 
@@ -3021,7 +3021,7 @@ begin
   if not Assigned(FrmConsole) then
     Exit;
   phoneNumber := AjustNumber.FormatIn(phoneNumber);
-  
+
   if pos('@', phoneNumber) = 0 then
   Begin
     Int_OnErroInterno(Self, MSG_ExceptPhoneNumberError, phoneNumber);
@@ -3056,11 +3056,11 @@ begin
     Exit;
   if not Assigned(FrmConsole) then
     Exit;
-    
-  if (pos('@lid', AnsiLowerCase(phoneNumber)) = 0) then       
+
+  if (pos('@lid', AnsiLowerCase(phoneNumber)) = 0) then
     if pos('@', phoneNumber) = 0 then
       phoneNumber := SomenteNumero(phoneNumber);
-      
+
   {phoneNumber := AjustNumber.FormatIn(phoneNumber);
   if pos('@', phoneNumber) = 0 then
   Begin
@@ -3126,11 +3126,11 @@ begin
     Exit;
   if not Assigned(FrmConsole) then
     Exit;
-    
-  if (pos('@lid', AnsiLowerCase(phoneNumber)) = 0) then         
+
+  if (pos('@lid', AnsiLowerCase(phoneNumber)) = 0) then
     if pos('@', phoneNumber) = 0 then
       phoneNumber := SomenteNumero(phoneNumber);
-      
+
   {phoneNumber := AjustNumber.FormatIn(phoneNumber);
   if pos('@', phoneNumber) = 0 then
   Begin
@@ -3795,7 +3795,8 @@ begin
   begin
     CheckWppCrash(TWppCrashClass(PReturnClass));
   end;
-  if PTypeHeader in [Th_Connecting, Th_Disconnecting, Th_ConnectingNoPhone, Th_getQrCodeForm, Th_getQrCodeForm, TH_Destroy, Th_Destroying]  then
+
+  if PTypeHeader in [Th_Connecting, Th_ConnectingFt_HTTP, Th_ConnectingFt_Desktop, Th_Disconnecting, Th_ConnectingNoPhone, Th_getQrCodeForm, Th_getQrCodeForm, TH_Destroy, Th_Destroying]  then
   begin
     case PTypeHeader of
       Th_Connecting            : Fstatus := Server_Connecting;
@@ -3804,6 +3805,7 @@ begin
       TH_Destroy               : Fstatus := Inject_Destroy;
       Th_Destroying            : Fstatus := Inject_Destroying;
       Th_ConnectingFt_Desktop,
+      Th_ConnectingFt_HTTP,
       Th_getQrCodeForm         : Fstatus := Server_ConnectingReaderCode;
     end;
     if Assigned(fOnGetStatus ) then
@@ -4219,11 +4221,11 @@ begin
     Exit;
   if not Assigned(FrmConsole) then
     Exit;
-    
+
   if (pos('@lid', AnsiLowerCase(phoneNumber)) = 0) then
     if pos('@', phoneNumber) = 0 then
       phoneNumber := SomenteNumero(phoneNumber);
-    
+
   {phoneNumber := AjustNumber.FormatIn(phoneNumber);
   if pos('@', phoneNumber) = 0 then
   Begin
@@ -4604,11 +4606,11 @@ begin
     Exit;
   if not Assigned(FrmConsole) then
     Exit;
-    
-  if (pos('@lid', AnsiLowerCase(phoneNumber)) = 0) then         
+
+  if (pos('@lid', AnsiLowerCase(phoneNumber)) = 0) then
     if pos('@', phoneNumber) = 0 then
       phoneNumber := SomenteNumero(phoneNumber);
-      
+
   {phoneNumber := AjustNumber.FormatIn(phoneNumber);
   if pos('@', phoneNumber) = 0 then
   Begin
@@ -4761,11 +4763,11 @@ begin
     Exit;
   if not Assigned(FrmConsole) then
     Exit;
-    
-  if (pos('@lid', AnsiLowerCase(phoneNumber)) = 0) then         
+
+  if (pos('@lid', AnsiLowerCase(phoneNumber)) = 0) then
     if pos('@', phoneNumber) = 0 then
       phoneNumber := SomenteNumero(phoneNumber);
-      
+
   {phoneNumber := AjustNumber.FormatIn(phoneNumber);
   if pos('@', phoneNumber) = 0 then
   begin
@@ -4797,11 +4799,11 @@ begin
     Exit;
   if not Assigned(FrmConsole) then
     Exit;
-    
-  if (pos('@lid', AnsiLowerCase(phoneNumber)) = 0) then         
+
+  if (pos('@lid', AnsiLowerCase(phoneNumber)) = 0) then
     if pos('@', phoneNumber) = 0 then
       phoneNumber := SomenteNumero(phoneNumber);
-      
+
   {phoneNumber := AjustNumber.FormatIn(phoneNumber);
   if pos('@', phoneNumber) = 0 then
   Begin
@@ -4833,11 +4835,11 @@ begin
     Exit;
   if not Assigned(FrmConsole) then
     Exit;
-    
-  if (pos('@lid', AnsiLowerCase(phoneNumber)) = 0) then         
+
+  if (pos('@lid', AnsiLowerCase(phoneNumber)) = 0) then
     if pos('@', phoneNumber) = 0 then
       phoneNumber := SomenteNumero(phoneNumber);
-      
+
   {phoneNumber := AjustNumber.FormatIn(phoneNumber);
   if pos('@', phoneNumber) = 0 then
   Begin
@@ -5072,11 +5074,11 @@ var
 begin
   if Application.Terminated Then
     Exit;
-    
+
   if not Assigned(FrmConsole) then
     Exit;
-    
-  if (pos('@lid', AnsiLowerCase(phoneNumber)) = 0) then         
+
+  if (pos('@lid', AnsiLowerCase(phoneNumber)) = 0) then
     if pos('@', phoneNumber) = 0 then
       phoneNumber := SomenteNumero(phoneNumber);
 
@@ -5176,16 +5178,16 @@ begin
     Exit;
   if not Assigned(FrmConsole) then
     Exit;
-    
+
   if (pos('@lid', AnsiLowerCase(vNum)) = 0) then
     if pos('@', vNum) = 0 then
       vNum := SomenteNumero(vNum);
-      
 
-  if (pos('@lid', AnsiLowerCase(vNumDest)) = 0) then    
+
+  if (pos('@lid', AnsiLowerCase(vNumDest)) = 0) then
     if pos('@', vNumDest) = 0 then
       vNumDest := SomenteNumero(vNumDest);
-    
+
   {vNumDest := AjustNumber.FormatIn(vNumDest);
   if (pos('@', vNumDest) = 0) then
   Begin
@@ -5352,11 +5354,11 @@ begin
     Exit;
   if not Assigned(FrmConsole) then
     Exit;
-    
-  if (pos('@lid', AnsiLowerCase(phoneNumber)) = 0) then  
+
+  if (pos('@lid', AnsiLowerCase(phoneNumber)) = 0) then
     if pos('@', phoneNumber) = 0 then
       phoneNumber := SomenteNumero(phoneNumber);
-      
+
   {phoneNumber := AjustNumber.FormatIn(phoneNumber);
   if pos('@', phoneNumber) = 0 then
   Begin
@@ -5977,10 +5979,10 @@ begin
     Int_OnErroInterno(Self, MSG_WarningNothingtoSend, vContato);
     Exit;
   end;
-  if (pos('@lid', AnsiLowerCase(vContato)) = 0) then  
+  if (pos('@lid', AnsiLowerCase(vContato)) = 0) then
     if pos('@', vContato) = 0 then
       vContato := SomenteNumero(vContato);
-      
+
   {vContato := AjustNumber.FormatIn(vContato);
   if pos('@', vContato) = 0 then
   Begin
