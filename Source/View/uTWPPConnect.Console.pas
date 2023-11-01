@@ -762,7 +762,7 @@ end;
 
 procedure TFrmConsole.ExecuteJSDir(PScript: string; Purl: String; pStartline: integer);
 begin
-  Chromium1.Browser.MainFrame.ExecuteJavaScript(PScript, Purl, pStartline)
+  if Assigned(Chromium1.Browser) then Chromium1.Browser.MainFrame.ExecuteJavaScript(PScript, Purl, pStartline)
 end;
 
 procedure TFrmConsole.QRCodeWeb_Start;
@@ -1738,7 +1738,7 @@ procedure TFrmConsole.RebootChromiumNew;
 begin
   //Marcelo 03/05/2023
   Chromium1.StopLoad;
-  Chromium1.Browser.ReloadIgnoreCache;
+  if Assigned(Chromium1.Browser) then Chromium1.Browser.ReloadIgnoreCache;
 
   localStorage_debug;
   save_log('RebootChromiumNew');
