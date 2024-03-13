@@ -10,11 +10,13 @@ object frDemo: TfrDemo
   Font.Height = -13
   Font.Name = 'Roboto'
   Font.Style = []
+  OldCreateOrder = False
   Position = poScreenCenter
   WindowState = wsMaximized
   OnClose = FormClose
   OnCreate = FormCreate
   OnShow = FormShow
+  PixelsPerInch = 96
   TextHeight = 15
   object SplitView1: TSplitView
     Left = 0
@@ -50,37 +52,37 @@ object frDemo: TfrDemo
               OnClick = ctbtnCategories0Items0Click
             end
             item
-              Caption = 'Messages'
+              Caption = 'Mensagens'
               ImageIndex = 2
               OnClick = ctbtnCategories0Items1Click
             end
             item
-              Caption = 'Groups'
+              Caption = 'Grupos'
               ImageIndex = 3
               OnClick = ctbtnCategories0Items2Click
             end
             item
-              Caption = 'Messages Sent'
+              Caption = 'Mensagens Enviadas'
               ImageIndex = 4
               OnClick = ctbtnCategories0Items3Click
             end
             item
-              Caption = 'Received Messages'
+              Caption = 'Mensagens Recebidas'
               ImageIndex = 5
               OnClick = ctbtnCategories0Items4Click
             end
             item
-              Caption = 'Catalog'
+              Caption = 'Cat'#225'logo'
               ImageIndex = 6
               OnClick = ctbtnCategories0Items5Click
             end
             item
-              Caption = 'Others'
+              Caption = 'Outros'
               ImageIndex = 7
               OnClick = ctbtnCategories0Items6Click
             end
             item
-              Caption = 'Communities'
+              Caption = 'Comunidades'
               ImageIndex = 8
               OnClick = ctbtnCategories0Items7Click
             end>
@@ -1528,9 +1530,9 @@ object frDemo: TfrDemo
     object lblMeuNumero: TLabel
       Left = 128
       Top = 22
-      Width = 131
+      Width = 141
       Height = 29
-      Caption = 'My Number:'
+      Caption = 'Meu n'#250'mero:'
       Font.Charset = ANSI_CHARSET
       Font.Color = clWhite
       Font.Height = -24
@@ -1559,7 +1561,7 @@ object frDemo: TfrDemo
       ParentFont = False
     end
     object Label1: TLabel
-      Left = 530
+      Left = 746
       Top = 63
       Width = 146
       Height = 19
@@ -1571,94 +1573,45 @@ object frDemo: TfrDemo
       Font.Style = [fsBold]
       ParentFont = False
     end
-    object lblNomeConta: TLabel
-      Left = 539
-      Top = 22
-      Width = 6
-      Height = 29
-      Font.Charset = ANSI_CHARSET
-      Font.Color = clWhite
-      Font.Height = -24
-      Font.Name = 'Roboto Bk'
-      Font.Style = []
-      ParentFont = False
-    end
-    object Label2: TLabel
-      Left = 775
-      Top = 63
-      Width = 88
-      Height = 19
-      Caption = 'Url Typebot:'
-      Font.Charset = ANSI_CHARSET
-      Font.Color = clWhite
-      Font.Height = -16
-      Font.Name = 'Roboto'
-      Font.Style = [fsBold]
-      ParentFont = False
-    end
-    object Label4: TLabel
-      Left = 956
-      Top = 63
-      Width = 63
-      Height = 19
-      Caption = 'PublicId:'
-      Font.Charset = ANSI_CHARSET
-      Font.Color = clWhite
-      Font.Height = -16
-      Font.Name = 'Roboto'
-      Font.Style = [fsBold]
-      ParentFont = False
-    end
     object btnAbrirZap: TBitBtn
       Left = 128
       Top = 82
-      Width = 141
+      Width = 150
       Height = 25
-      Caption = 'Open WhatsApp Web'
+      Caption = 'Abrir WhatsApp Web'
       TabOrder = 0
       OnClick = btnAbrirZapClick
     end
-    object BitBtn3: TBitBtn
-      Left = 425
+    object BitBtn2: TBitBtn
+      Left = 447
       Top = 82
-      Width = 94
+      Width = 150
+      Height = 25
+      Caption = 'Progresso WhatsApp'
+      TabOrder = 1
+      OnClick = BitBtn2Click
+    end
+    object BitBtn3: TBitBtn
+      Left = 603
+      Top = 82
+      Width = 134
       Height = 25
       BiDiMode = bdRightToLeft
-      Caption = 'Start ChatGPT'
+      Caption = 'Iniciar ChatGPT'
       ParentBiDiMode = False
-      TabOrder = 1
+      TabOrder = 2
       OnClick = BitBtn3Click
     end
     object edtApiKeyChatGPT: TEdit
-      Left = 530
+      Left = 746
       Top = 84
-      Width = 239
+      Width = 271
       Height = 23
-      TabOrder = 2
-    end
-    object SwtChatGPT: TToggleSwitch
-      Left = 688
-      Top = 60
-      Width = 79
-      Height = 21
-      Font.Charset = ANSI_CHARSET
-      Font.Color = clWhite
-      Font.Height = -16
-      Font.Name = 'Roboto'
-      Font.Style = [fsBold]
-      ParentFont = False
       TabOrder = 3
     end
-    object eUrlTypebot: TEdit
-      Left = 775
-      Top = 84
-      Width = 175
-      Height = 23
-      TabOrder = 4
-    end
-    object SwtTypebot: TToggleSwitch
-      Left = 871
-      Top = 60
+    object SwtChatGPT: TToggleSwitch
+      Left = 938
+      Top = 58
       Width = 79
       Height = 21
       Font.Charset = ANSI_CHARSET
@@ -1667,15 +1620,7 @@ object frDemo: TfrDemo
       Font.Name = 'Roboto'
       Font.Style = [fsBold]
       ParentFont = False
-      TabOrder = 5
-      OnClick = SwtTypebotClick
-    end
-    object ePublicId: TEdit
-      Left = 956
-      Top = 84
-      Width = 122
-      Height = 23
-      TabOrder = 6
+      TabOrder = 4
     end
   end
   object pnlrodape: TPanel
@@ -1726,151 +1671,59 @@ object frDemo: TfrDemo
     inherited GroupBox1: TGroupBox
       Height = 589
       ExplicitHeight = 589
-      inherited Label1: TLabel
-        StyleElements = [seFont, seClient, seBorder]
-      end
-      inherited Label2: TLabel
-        StyleElements = [seFont, seClient, seBorder]
-      end
-      inherited ed_num: TLabeledEdit
-        StyleElements = [seFont, seClient, seBorder]
-      end
-      inherited mem_message: TMemo
-        StyleElements = [seFont, seClient, seBorder]
-      end
-      inherited edtURL: TLabeledEdit
-        StyleElements = [seFont, seClient, seBorder]
-      end
       inherited PageControl1: TPageControl
         Top = 278
         Height = 309
         ExplicitTop = 278
         ExplicitHeight = 309
         inherited tsImage: TTabSheet
+          ExplicitLeft = 4
+          ExplicitTop = 26
+          ExplicitWidth = 229
           ExplicitHeight = 279
           inherited Image1: TImage
             Height = 264
             ExplicitHeight = 264
           end
           inherited lblCaminhoImagem: TLabel
-            StyleElements = [seFont, seClient, seBorder]
+            Width = 229
           end
         end
         inherited tsBase64: TTabSheet
-          inherited Memo1: TMemo
-            StyleElements = [seFont, seClient, seBorder]
-          end
+          ExplicitLeft = 4
+          ExplicitTop = 26
+          ExplicitWidth = 229
+          ExplicitHeight = 191
         end
       end
-      inherited eChoicesPool: TEdit
-        StyleElements = [seFont, seClient, seBorder]
-      end
     end
-    inherited gbAcoesBasicas: TScrollBox
+    inherited gbAcoesBasicas: TGroupBox
       Height = 589
       ExplicitHeight = 589
       inherited btnImagem: TButton
         OnClick = frameMensagem1btnImagemClick
       end
     end
-    inherited gbAcoesChats: TScrollBox
+    inherited GroupBox2: TGroupBox
       Height = 589
       ExplicitHeight = 589
       inherited btnLimparConversa: TButton
-        Width = 204
-        ExplicitWidth = 204
+        ExplicitTop = 237
       end
       inherited btnArquivar: TButton
-        Width = 204
-        ExplicitWidth = 204
-      end
-      inherited btnResponder: TButton
-        Width = 204
-        ExplicitWidth = 204
-      end
-      inherited btnReagir: TButton
-        Width = 204
-        ExplicitWidth = 204
+        ExplicitTop = 175
       end
       inherited btnVerificarNumero: TButton
-        Width = 204
-        ExplicitWidth = 204
+        ExplicitTop = 268
       end
       inherited btnStatus: TButton
-        Width = 204
-        ExplicitWidth = 204
+        ExplicitTop = 299
       end
       inherited btnDetalhe: TButton
-        Width = 204
-        ExplicitWidth = 204
-      end
-      inherited btnBloquear: TButton
-        Width = 204
-        ExplicitWidth = 204
-      end
-      inherited btnDesbloquear: TButton
-        Width = 204
-        ExplicitWidth = 204
-      end
-      inherited btnFixarChat: TButton
-        Width = 204
-        ExplicitWidth = 204
-      end
-      inherited btnDesfixarChat: TButton
-        Width = 204
-        ExplicitWidth = 204
+        ExplicitLeft = 5
       end
       inherited BitBtn1: TButton
-        Width = 204
-        ExplicitWidth = 204
-      end
-      inherited BitBtn2: TButton
-        Width = 204
-        ExplicitWidth = 204
-      end
-      inherited btnArquivarTodosChats: TButton
-        Width = 204
-        ExplicitWidth = 204
-      end
-      inherited btnDeletarTodosChats: TButton
-        Width = 204
-        ExplicitWidth = 204
-      end
-      inherited Button1: TButton
-        Width = 204
-        ExplicitWidth = 204
-      end
-      inherited btnValidarListarNumeros: TButton
-        Width = 204
-        ExplicitWidth = 204
-      end
-      inherited btnGetMessage: TButton
-        Width = 204
-        ExplicitWidth = 204
-      end
-      inherited Button3: TButton
-        Width = 204
-        ExplicitWidth = 204
-      end
-      inherited Button4: TButton
-        Width = 204
-        ExplicitWidth = 204
-      end
-      inherited bEditMessage: TButton
-        Width = 204
-        ExplicitWidth = 204
-      end
-      inherited btnDeletarOldChat: TButton
-        Width = 204
-        ExplicitWidth = 204
-      end
-      inherited bGetMe: TButton
-        Width = 204
-        ExplicitWidth = 204
-      end
-      inherited bGetMensagem: TButton
-        Width = 204
-        ExplicitWidth = 204
+        ExplicitTop = 206
       end
     end
     inherited GroupBox3: TGroupBox
@@ -1879,9 +1732,6 @@ object frDemo: TfrDemo
       inherited groupListaContatos: TGroupBox
         Height = 227
         ExplicitHeight = 227
-        inherited Panel4: TPanel
-          StyleElements = [seFont, seClient, seBorder]
-        end
         inherited listaContatos: TListView
           Height = 171
           ExplicitHeight = 171
@@ -1915,7 +1765,6 @@ object frDemo: TfrDemo
       Width = 1008
       Height = 595
       WordWrap = False
-      StyleElements = [seFont, seClient, seBorder]
       ExplicitWidth = 1008
       ExplicitHeight = 595
     end
@@ -1935,13 +1784,11 @@ object frDemo: TfrDemo
     inherited memo_unReadMessage: TMemo
       Width = 1008
       Height = 506
-      StyleElements = [seFont, seClient, seBorder]
       ExplicitWidth = 1008
       ExplicitHeight = 506
     end
     inherited Panel1: TPanel
       Width = 1008
-      StyleElements = [seFont, seClient, seBorder]
       ExplicitWidth = 1008
       inherited Image2: TImage
         Left = 903
@@ -1952,7 +1799,6 @@ object frDemo: TfrDemo
         Top = 59
         Width = 759
         Height = 23
-        StyleElements = [seFont, seClient, seBorder]
         ExplicitLeft = 39
         ExplicitTop = 59
         ExplicitWidth = 759
@@ -1991,7 +1837,6 @@ object frDemo: TfrDemo
     inherited lblStatus: TLabel
       Left = 14
       Anchors = [akLeft, akTop, akRight]
-      StyleElements = [seFont, seClient, seBorder]
       ExplicitLeft = 14
     end
     inherited whatsOff: TImage
@@ -2005,12 +1850,6 @@ object frDemo: TfrDemo
       Width = 118
       ExplicitLeft = 5
       ExplicitWidth = 118
-    end
-    inherited lblCodeLinkDevice: TLabel
-      StyleElements = [seFont, seClient, seBorder]
-    end
-    inherited eNumberWhats: TEdit
-      StyleElements = [seFont, seClient, seBorder]
     end
   end
   inline frameCatalogo1: TframeCatalogo
@@ -2033,7 +1872,6 @@ object frDemo: TfrDemo
     ExplicitHeight = 595
     inherited pnlGridCatalogo: TPanel
       Width = 1008
-      StyleElements = [seFont, seClient, seBorder]
       ExplicitWidth = 1008
       inherited DBGrid1: TDBGrid
         Width = 1006
@@ -2063,9 +1901,6 @@ object frDemo: TfrDemo
         end
       end
     end
-    inherited ed_num: TLabeledEdit
-      StyleElements = [seFont, seClient, seBorder]
-    end
   end
   inline frameOutros1: TframeOutros
     Left = 200
@@ -2088,25 +1923,6 @@ object frDemo: TfrDemo
     inherited GroupBox1: TGroupBox
       Height = 595
       ExplicitHeight = 595
-      inherited edtNumberContact: TLabeledEdit
-        StyleElements = [seFont, seClient, seBorder]
-      end
-      inherited edtNameContact: TLabeledEdit
-        StyleElements = [seFont, seClient, seBorder]
-      end
-      inherited edtSurnameContact: TLabeledEdit
-        StyleElements = [seFont, seClient, seBorder]
-      end
-      inherited bGetPnLidEntry: TButton
-        ExplicitLeft = 5
-        ExplicitTop = 87
-        ExplicitWidth = 231
-      end
-      inherited bGetIsLidMigrate: TButton
-        ExplicitLeft = 5
-        ExplicitTop = 56
-        ExplicitWidth = 231
-      end
     end
   end
   inline frameGrupos1: TframeGrupos
@@ -2135,9 +1951,6 @@ object frDemo: TfrDemo
       inherited gbGrupos: TGroupBox
         Height = 585
         ExplicitHeight = 585
-        inherited pnlTopoGrupos: TPanel
-          StyleElements = [seFont, seClient, seBorder]
-        end
         inherited gbacoes: TGroupBox
           Height = 411
           ExplicitHeight = 411
@@ -2145,53 +1958,11 @@ object frDemo: TfrDemo
       end
       inherited pnlEsquerda: TPanel
         Height = 585
-        StyleElements = [seFont, seClient, seBorder]
         ExplicitHeight = 585
-        inherited lbl_idParticipant: TLabel
-          StyleElements = [seFont, seClient, seBorder]
-        end
-        inherited lbl_idGroup: TLabel
-          StyleElements = [seFont, seClient, seBorder]
-        end
-        inherited Label1: TLabel
-          StyleElements = [seFont, seClient, seBorder]
-        end
-        inherited Label2: TLabel
-          StyleElements = [seFont, seClient, seBorder]
-        end
-        inherited Label3: TLabel
-          StyleElements = [seFont, seClient, seBorder]
-        end
-        inherited Lbl_InviteCode: TLabel
-          StyleElements = [seFont, seClient, seBorder]
-        end
-        inherited gbNovoGrupo: TGroupBox
-          inherited edtNomeGrupo: TLabeledEdit
-            StyleElements = [seFont, seClient, seBorder]
-          end
-          inherited edtTelefoneNovoParticipante: TLabeledEdit
-            StyleElements = [seFont, seClient, seBorder]
-          end
-        end
-        inherited gbGrupoLink: TGroupBox
-          inherited edtLinkConvite: TLabeledEdit
-            StyleElements = [seFont, seClient, seBorder]
-          end
-        end
-        inherited eChoicesPool: TEdit
-          StyleElements = [seFont, seClient, seBorder]
-        end
-        inherited Memo1: TMemo
-          StyleElements = [seFont, seClient, seBorder]
-        end
-        inherited edtIdGrupo: TEdit
-          StyleElements = [seFont, seClient, seBorder]
-        end
       end
       inherited pnlGruposParticipantes: TPanel
         Width = 474
         Height = 585
-        StyleElements = [seFont, seClient, seBorder]
         ExplicitWidth = 474
         ExplicitHeight = 585
         inherited GroupBox1: TGroupBox
@@ -2214,28 +1985,26 @@ object frDemo: TfrDemo
             ExplicitHeight = 420
             inherited lblIdParticipante: TLabel
               Width = 448
-              StyleElements = [seFont, seClient, seBorder]
             end
             inherited listaParticipantes: TListView
+              Top = 85
               Width = 414
-              Height = 327
+              Height = 330
+              ExplicitTop = 85
               ExplicitWidth = 414
-              ExplicitHeight = 327
+              ExplicitHeight = 330
             end
             inherited pnlParticipantesBotoes: TPanel
               Left = 422
-              Height = 333
-              StyleElements = [seFont, seClient, seBorder]
+              Top = 82
+              Height = 336
               ExplicitLeft = 422
-              ExplicitHeight = 333
+              ExplicitTop = 82
+              ExplicitHeight = 336
             end
             inherited pnltopopartici: TPanel
               Width = 448
-              StyleElements = [seFont, seClient, seBorder]
               ExplicitWidth = 448
-              inherited edtNovoParticipante: TLabeledEdit
-                StyleElements = [seFont, seClient, seBorder]
-              end
             end
           end
         end
@@ -2243,11 +2012,11 @@ object frDemo: TfrDemo
     end
   end
   object BitBtn1: TBitBtn
-    Left = 275
+    Left = 287
     Top = 82
-    Width = 144
+    Width = 150
     Height = 25
-    Caption = 'Reboot WhatsApp Web'
+    Caption = 'Reiniciar WhatsApp Web'
     TabOrder = 10
     OnClick = BitBtn1Click
   end
@@ -2278,7 +2047,6 @@ object frDemo: TfrDemo
         Height = 585
         ExplicitHeight = 585
         inherited pnlTopoGrupos: TPanel
-          StyleElements = [seFont, seClient, seBorder]
           inherited btnListarComunidades: TBitBtn
             OnClick = frameComunidades1btnListarComunidadesClick
           end
@@ -2293,53 +2061,23 @@ object frDemo: TfrDemo
       end
       inherited pnlEsquerda: TPanel
         Height = 585
-        StyleElements = [seFont, seClient, seBorder]
         ExplicitHeight = 585
-        inherited lbl_idParticipant: TLabel
-          StyleElements = [seFont, seClient, seBorder]
-        end
-        inherited lbl_idGroup: TLabel
-          StyleElements = [seFont, seClient, seBorder]
-        end
-        inherited Label1: TLabel
-          StyleElements = [seFont, seClient, seBorder]
-        end
-        inherited Label2: TLabel
-          StyleElements = [seFont, seClient, seBorder]
-        end
         inherited gbNovoGrupo: TGroupBox
           inherited edtNomeComunidade: TLabeledEdit
             EditLabel.ExplicitWidth = 87
-            StyleElements = [seFont, seClient, seBorder]
-          end
-          inherited edtGrupoParticipante: TLabeledEdit
-            StyleElements = [seFont, seClient, seBorder]
           end
           inherited btnCriarGrupo: TBitBtn
             OnClick = frameComunidades1btnCriarGrupoClick
           end
         end
-        inherited gbGrupoLink: TGroupBox
-          inherited edtLinkConvite: TLabeledEdit
-            StyleElements = [seFont, seClient, seBorder]
-          end
-        end
-        inherited eChoicesPool: TEdit
-          StyleElements = [seFont, seClient, seBorder]
-        end
         inherited Memo1: TMemo
-          Top = 368
-          StyleElements = [seFont, seClient, seBorder]
-          ExplicitTop = 368
-        end
-        inherited edtAddSubGrupo: TLabeledEdit
-          StyleElements = [seFont, seClient, seBorder]
+          Left = 92
+          ExplicitLeft = 92
         end
       end
       inherited pnlGruposParticipantes: TPanel
         Width = 474
         Height = 585
-        StyleElements = [seFont, seClient, seBorder]
         ExplicitWidth = 474
         ExplicitHeight = 585
         inherited GroupBox1: TGroupBox
@@ -2362,40 +2100,30 @@ object frDemo: TfrDemo
             ExplicitHeight = 420
             inherited lblIdParticipante: TLabel
               Width = 448
-              StyleElements = [seFont, seClient, seBorder]
             end
             inherited listaParticipantes: TListView
+              Top = 85
               Width = 414
-              Height = 327
+              Height = 330
+              ExplicitTop = 85
               ExplicitWidth = 414
-              ExplicitHeight = 327
+              ExplicitHeight = 330
             end
             inherited pnlParticipantesBotoes: TPanel
               Left = 422
-              Height = 333
-              StyleElements = [seFont, seClient, seBorder]
+              Top = 82
+              Height = 336
               ExplicitLeft = 422
-              ExplicitHeight = 333
+              ExplicitTop = 82
+              ExplicitHeight = 336
             end
             inherited pnltopopartici: TPanel
               Width = 448
-              StyleElements = [seFont, seClient, seBorder]
               ExplicitWidth = 448
-              inherited edtNovoParticipante: TLabeledEdit
-                StyleElements = [seFont, seClient, seBorder]
-              end
             end
           end
         end
       end
-    end
-    inherited ImageList1: TImageList
-      Left = 848
-      Top = 7
-    end
-    inherited OpenPictureDialog1: TOpenPictureDialog
-      Left = 748
-      Top = 6
     end
   end
   object ImageList1: TImageList
@@ -2403,8 +2131,8 @@ object frDemo: TfrDemo
     DrawingStyle = dsTransparent
     Height = 48
     Width = 48
-    Left = 1096
-    Top = 8
+    Left = 488
+    Top = 104
     Bitmap = {
       494C010109001800040030003000FFFFFFFF2110FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000C000000090000000010020000000000000B0
@@ -5979,20 +5707,13 @@ object frDemo: TfrDemo
   end
   object TWPPConnect1: TWPPConnect
     InjectJS.AutoUpdateTimeOut = 6
-    InjectJS.InjetarScript = False
-    InjectJS.InjetAfterIsWhatsAppWebReady = True
     InjectJS.JSURL = 
       'https://raw.githubusercontent.com/wppconnect-team/WPP4Delphi/mai' +
       'n/Source/JS/js.abr'
-    InjectJS.DownloadJSType = DT_Indy
-    InjectJS.SecondsWaitInject = 8
-    Config.AutoDelay = 500
-    Config.ReceiveAttachmentPath = 'C:\Executaveis\TWPPConnectAnexos\'
-    Config.SecondsMonitor = 45
-    Config.Evento_msg_ack_change = True
-    Config.Evento_msg_revoke = True
-    Config.Evento_new_message = True
-    Config.Evento_new_reaction = True
+    InjectJS.SecondsWaitInject = 4
+    Config.AutoStart = True
+    Config.AutoDelay = 1000
+    Config.SecondsMonitorNew = 5
     AjustNumber.LengthPhone = 8
     AjustNumber.DDIDefault = 55
     FormQrCodeType = Ft_Http
@@ -6001,11 +5722,9 @@ object frDemo: TfrDemo
     OnGetAllGroupList = TWPPConnect1GetAllGroupList
     OnGetAllCommunitys = TWPPConnect1GetAllCommunitys
     OnGetAllGroupAdmins = TWPPConnect1GetAllGroupAdmins
-    OnAfterInjectJS = TWPPConnect1AfterInjectJS
     OnGetQrCode = TWPPConnect1GetQrCode
     OnGetChatList = TWPPConnect1GetChatList
     OnGetUnReadMessages = TWPPConnect1GetUnReadMessages
-    OnGetMessages = TWPPConnect1GetMessages
     OnGetAllGroupContacts = TWPPConnect1GetAllGroupContacts
     OnGetStatus = TWPPConnect1GetStatus
     OnGetMessageById = TWPPConnect1GetMessageById
@@ -6017,23 +5736,16 @@ object frDemo: TfrDemo
     OnGet_sendListMessageEx = TWPPConnect1Get_sendListMessageEx
     OnGet_SendLocationMessageEx = TWPPConnect1Get_SendLocationMessageEx
     OnGet_sendVCardContactMessageEx = TWPPConnect1Get_sendVCardContactMessageEx
-    OnGetIsLidMigrated = TWPPConnect1GetIsLidMigrated
-    OnGetPnLidEntry = TWPPConnect1GetPnLidEntry
     OnGet_ProductCatalog = TWPPConnect1Get_ProductCatalog
     OnWPPMonitorCrash = TWPPConnect1WPPMonitorCrash
     OnGetIncomingiCall = TWPPConnect1GetIncomingiCall
-    OnGetOutgoingCall = TWPPConnect1GetOutgoingCall
     OnGetIsReady = TWPPConnect1GetIsReady
     OnGetIsLoaded = TWPPConnect1GetIsLoaded
     OnGetIsAuthenticated = TWPPConnect1GetIsAuthenticated
-    OnGetIsLogout = TWPPConnect1GetIsLogout
-    OnGetEnvrequire_auth = TWPPConnect1GetEnvrequire_auth
     OnGetIsOnline = TWPPConnect1GetIsOnline
     OnGetEnvIsOnline = TWPPConnect1GetEnvIsOnline
-    OnGetEnvneedsUpdate = TWPPConnect1GetEnvneedsUpdate
     OnGetListChat = TWPPConnect1GetListChat
     OnGetMessageACK = TWPPConnect1GetMessageACK
-    OnRetErrorWhiteScreen = TWPPConnect1RetErrorWhiteScreen
     OnGetCheckIsValidNumber = TWPPConnect1GetCheckIsValidNumber
     OnGetProfilePicThumb = TWPPConnect1GetProfilePicThumb
     OnGetMyNumber = TWPPConnect1GetMyNumber
@@ -6055,77 +5767,48 @@ object frDemo: TfrDemo
     OnGet_SendPollMessageResponse = TWPPConnect1Get_SendPollMessageResponse
     OnGetAck_changeEvento = TWPPConnect1GetAck_changeEvento
     OnGetmsg_revokeEvento = TWPPConnect1Getmsg_revokeEvento
-    OnGetmsg_EditedEvento = TWPPConnect1Getmsg_EditedEvento
-    OnGetTotalChatsUserRead = TWPPConnect1GetTotalChatsUserRead
-    OnGetWAVersion = TWPPConnect1GetWAVersion
-    OnGetlogout_reason = TWPPConnect1Getlogout_reason
-    OnGetactive_chat = TWPPConnect1Getactive_chat
-    OnGetpresence_change = TWPPConnect1Getpresence_change
-    OnGetupdate_label = TWPPConnect1Getupdate_label
-    OnGetgroup_participant_changed = TWPPConnect1Getgroup_participant_changed
-    OnGetorder_payment_status = TWPPConnect1Getorder_payment_status
-    OnGetlive_location_start = TWPPConnect1Getlive_location_start
-    OnGetAllParticipantsGroup = TWPPConnect1GetAllParticipantsGroup
-    OnGetgenLinkDeviceCodeForPhoneNumber = TWPPConnect1GetgenLinkDeviceCodeForPhoneNumber
     OnGetHistorySyncProgress = TWPPConnect1GetHistorySyncProgress
     OnGetQrCodeDesconectouErroCache = TWPPConnect1GetQrCodeDesconectouErroCache
-    OnGet_ErrorResponse = TWPPConnect1Get_ErrorResponse
-    OnGet_deleteMessageNewResponse = TWPPConnect1Get_deleteMessageNewResponse
-    OnGet_editMessageNewResponse = TWPPConnect1Get_editMessageNewResponse
-    Left = 298
-    Top = 8
+    Left = 288
+    Top = 480
   end
   object timerStatus: TTimer
     Enabled = False
+    Interval = 500
     OnTimer = timerStatusTimer
-    Left = 452
-    Top = 8
+    Left = 440
+    Top = 32
   end
   object TimerVerificaConexao: TTimer
-    Enabled = False
-    Interval = 50000
+    Interval = 40000
     OnTimer = TimerVerificaConexaoTimer
-    Left = 544
-    Top = 8
+    Left = 528
+    Top = 32
   end
   object TimerCheckOnline: TTimer
-    Enabled = False
     Interval = 60000
     OnTimer = TimerCheckOnlineTimer
-    Left = 636
-    Top = 8
+    Left = 632
+    Top = 32
   end
   object TimerCopiarPastaCache: TTimer
     Enabled = False
     Interval = 120000
     OnTimer = TimerCopiarPastaCacheTimer
-    Left = 728
-    Top = 8
+    Left = 736
+    Top = 16
   end
   object TimerRestauraPastaCache: TTimer
     Enabled = False
     Interval = 30000
     OnTimer = TimerRestauraPastaCacheTimer
-    Left = 820
+    Left = 872
     Top = 8
   end
   object TimerProgress: TTimer
     Enabled = False
     OnTimer = TimerProgressTimer
-    Left = 1004
-    Top = 8
-  end
-  object TimerBegin: TTimer
-    Interval = 7000
-    OnTimer = TimerBeginTimer
-    Left = 912
-    Top = 8
-  end
-  object TimerIsOnline: TTimer
-    Enabled = False
-    Interval = 40000
-    OnTimer = TimerIsOnlineTimer
-    Left = 384
-    Top = 8
+    Left = 848
+    Top = 168
   end
 end
