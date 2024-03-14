@@ -3421,9 +3421,9 @@ begin
     if FAQrCodeImageStream.Size <= 0 Then
        Exit;
     FreeAndNil(FAQrCodeImage);
-    FAQrCodeImage  := TPicture.Create;       
+    FAQrCodeImage  := TPicture.Create;
     FAQrCodeImageStream.Position := 0;
-    
+
     {$IFDEF VER330}
       FAQrCodeImage.LoadFromStream(FAQrCodeImageStream);
    {$ELSE}
@@ -3684,12 +3684,13 @@ var
   lAJsonArray: TJSONArray;
 begin
   lAJsonObj := nil;
-
-  lAJsonObj := TJSONObject.ParseJSONValue(TEncoding.UTF8.GetBytes(pAJsonString), 0) as TJSONObject;
-
+  //lAJsonObj := TJSONObject.ParseJSONValue(TFile.ReadAllBytes(pAJsonString), 0);
+  //lAJsonObj      := TJSONObject.ParseJSONValue(pAJsonString);
   FInjectWorking := False;
   try
     try
+      lAJsonObj := TJSONObject.ParseJSONValue(TEncoding.UTF8.GetBytes(pAJsonString), 0) as TJSONObject;
+
       if NOT Assigned(lAJsonObj) then
         Exit;
       //tentar thread aqui...
@@ -4003,11 +4004,11 @@ begin
       //DownLoadInternetFile(TPPConnectJS_libeay32, 'libeay32.dll');
 
       //Aurino 11/07/2022
-      
+
       save_log('antes GetUrl: js.abr ');
       Get(Purl, FReturnUrl); // arquivo js.abr in wa.js by wppconnect
       save_log('depois GetUrl: js.abr ');
-      
+
       if FReturnUrl.size = 0 then
         save_log('FReturnUrl Vazio');
 
