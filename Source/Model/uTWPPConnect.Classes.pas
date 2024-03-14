@@ -2941,11 +2941,12 @@ var
 begin
   lAJsonObj := nil;
   //lAJsonObj := TJSONObject.ParseJSONValue(TFile.ReadAllBytes(pAJsonString), 0);
-  lAJsonObj := TJSONObject.ParseJSONValue(TEncoding.UTF8.GetBytes(pAJsonString), 0) as TJSONObject;
   //lAJsonObj      := TJSONObject.ParseJSONValue(pAJsonString);
   FInjectWorking := False;
   try
     try
+      lAJsonObj := TJSONObject.ParseJSONValue(TEncoding.UTF8.GetBytes(pAJsonString), 0) as TJSONObject;
+
       if NOT Assigned(lAJsonObj) then
          Exit;
       //tentar thread aqui...
