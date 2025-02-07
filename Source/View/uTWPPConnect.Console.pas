@@ -628,7 +628,7 @@ procedure TFrmConsole.bInfoClick(Sender: TObject);
 begin
   getWAVersion;
   GetTotalChatsUserRead;
-  Caption := 'WPPConnect Team - WPP4Delphi - WhatsAppWeb v' + TWPPConnect(FOwner).WhatsAppWebVersion +  ' - Conversas Lidas(' + TWPPConnect(FOwner).TotalChatsUserRead.ToString + ')  Number: ' + TWPPConnect(FOwner).MyNumber;
+  Caption := 'WhatsAppWeb v' + TWPPConnect(FOwner).WhatsAppWebVersion +  ' - Conversas Lidas(' + TWPPConnect(FOwner).TotalChatsUserRead.ToString + ')  Number: ' + TWPPConnect(FOwner).MyNumber;
   lblNumber.Caption := 'Number: ' + TWPPConnect(FOwner).MyNumber;
 end;
 
@@ -4680,9 +4680,9 @@ procedure TFrmConsole.FormShow(Sender: TObject);
 var
   Version_JS, vWAJS: string;
 begin
-  Lbl_Caption.Caption := 'WPPConnect '; //Text_FrmConsole_Caption;
+  Lbl_Caption.Caption := Text_FrmConsole_Caption;
   Lbl_Caption.Caption := Lbl_Caption.Caption + ' CEF lib ' + uTWPPConnect.ConfigCEF.GlobalCEFApp.LibCefVersion + ' Chrome ' + uTWPPConnect.ConfigCEF.GlobalCEFApp.ChromeVersion; //+ ' TWPPConnect V. ' + TWPPConnectVersion;
-  Lbl_Versao.Caption := 'V. 2.8.2' + ''; //TWPPConnectVersion;
+  Lbl_Versao.Caption := TWPPConnectVersion;
 
   vWAJS := Copy(TWPPConnect(FOwner).InjectJS.JSScript.Text, pos('//WPPCONNECT', TWPPConnect(FOwner).InjectJS.JSScript.Text) + 12, 150);
   vWAJS := 'wa-js: ' + Trim(Copy(vWAJS, 1, pos('/*', vWAJS) -3));
