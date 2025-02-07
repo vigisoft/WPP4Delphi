@@ -67,8 +67,27 @@ Type
     Procedure SetTranslator(Const PLanguage: TLanguageInject);
   End;
 
+  procedure SetTranslate(AResourceString: PResStringRec; AValue: String);
+
 
 implementation
+{
+ Method to dynamically change default messages.
+
+ How to use:
+
+  ShowMessage('Old: ' +  uTWPPConnect.Constant.Text_FrmConsole_Caption);
+  uTWPPConnect.languages.SetTranslate(@Text_FrmConsole_Caption,IfThen(Application.Title.IsEmpty,Self.Caption,Application.Title));
+  ShowMessage('New: ' +  uTWPPConnect.Constant.Text_FrmConsole_Caption);
+}
+procedure SetTranslate(AResourceString: PResStringRec; AValue: String);
+begin
+  try
+    TTranslatorInject.SetResourceString(AResourceString, PWideChar(AValue));
+  except
+  end;
+end;
+
 { LTranslatorInject }
 
 
