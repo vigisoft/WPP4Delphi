@@ -52,37 +52,37 @@ object frDemo: TfrDemo
               OnClick = ctbtnCategories0Items0Click
             end
             item
-              Caption = 'Mensagens'
+              Caption = 'Messages'
               ImageIndex = 2
               OnClick = ctbtnCategories0Items1Click
             end
             item
-              Caption = 'Grupos'
+              Caption = 'Groups'
               ImageIndex = 3
               OnClick = ctbtnCategories0Items2Click
             end
             item
-              Caption = 'Mensagens Enviadas'
+              Caption = 'Messages Sent'
               ImageIndex = 4
               OnClick = ctbtnCategories0Items3Click
             end
             item
-              Caption = 'Mensagens Recebidas'
+              Caption = 'Received Messages'
               ImageIndex = 5
               OnClick = ctbtnCategories0Items4Click
             end
             item
-              Caption = 'Cat'#225'logo'
+              Caption = 'Catalog'
               ImageIndex = 6
               OnClick = ctbtnCategories0Items5Click
             end
             item
-              Caption = 'Outros'
+              Caption = 'Others'
               ImageIndex = 7
               OnClick = ctbtnCategories0Items6Click
             end
             item
-              Caption = 'Comunidades'
+              Caption = 'Communities'
               ImageIndex = 8
               OnClick = ctbtnCategories0Items7Click
             end>
@@ -1530,9 +1530,9 @@ object frDemo: TfrDemo
     object lblMeuNumero: TLabel
       Left = 128
       Top = 22
-      Width = 141
+      Width = 131
       Height = 29
-      Caption = 'Meu n'#250'mero:'
+      Caption = 'My Number:'
       Font.Charset = ANSI_CHARSET
       Font.Color = clWhite
       Font.Height = -24
@@ -1561,11 +1561,36 @@ object frDemo: TfrDemo
       ParentFont = False
     end
     object Label1: TLabel
-      Left = 746
+      Left = 606
       Top = 63
       Width = 146
       Height = 19
       Caption = 'Chave API ChatGPT:'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWhite
+      Font.Height = -16
+      Font.Name = 'Roboto'
+      Font.Style = [fsBold]
+      ParentFont = False
+    end
+    object lblNomeConta: TLabel
+      Left = 539
+      Top = 22
+      Width = 6
+      Height = 29
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWhite
+      Font.Height = -24
+      Font.Name = 'Roboto Bk'
+      Font.Style = []
+      ParentFont = False
+    end
+    object Label2: TLabel
+      Left = 851
+      Top = 63
+      Width = 93
+      Height = 19
+      Caption = 'Url Typebot::'
       Font.Charset = ANSI_CHARSET
       Font.Color = clWhite
       Font.Height = -16
@@ -1578,40 +1603,31 @@ object frDemo: TfrDemo
       Top = 82
       Width = 150
       Height = 25
-      Caption = 'Abrir WhatsApp Web'
+      Caption = 'Open WhatsApp Web'
       TabOrder = 0
       OnClick = btnAbrirZapClick
     end
-    object BitBtn2: TBitBtn
-      Left = 447
-      Top = 82
-      Width = 150
-      Height = 25
-      Caption = 'Progresso WhatsApp'
-      TabOrder = 1
-      OnClick = BitBtn2Click
-    end
     object BitBtn3: TBitBtn
-      Left = 603
+      Left = 463
       Top = 82
       Width = 134
       Height = 25
       BiDiMode = bdRightToLeft
-      Caption = 'Iniciar ChatGPT'
+      Caption = 'Start ChatGPT'
       ParentBiDiMode = False
-      TabOrder = 2
+      TabOrder = 1
       OnClick = BitBtn3Click
     end
     object edtApiKeyChatGPT: TEdit
-      Left = 746
+      Left = 606
       Top = 84
-      Width = 271
+      Width = 239
       Height = 23
-      TabOrder = 3
+      TabOrder = 2
     end
     object SwtChatGPT: TToggleSwitch
-      Left = 938
-      Top = 58
+      Left = 764
+      Top = 60
       Width = 79
       Height = 21
       Font.Charset = ANSI_CHARSET
@@ -1620,7 +1636,28 @@ object frDemo: TfrDemo
       Font.Name = 'Roboto'
       Font.Style = [fsBold]
       ParentFont = False
+      TabOrder = 3
+    end
+    object eUrlTypebot: TEdit
+      Left = 851
+      Top = 84
+      Width = 224
+      Height = 23
       TabOrder = 4
+    end
+    object SwtTypebot: TToggleSwitch
+      Left = 995
+      Top = 60
+      Width = 79
+      Height = 21
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWhite
+      Font.Height = -16
+      Font.Name = 'Roboto'
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 5
+      OnClick = SwtTypebotClick
     end
   end
   object pnlrodape: TPanel
@@ -1697,33 +1734,111 @@ object frDemo: TfrDemo
         end
       end
     end
-    inherited gbAcoesBasicas: TGroupBox
+    inherited gbAcoesBasicas: TScrollBox
       Height = 589
       ExplicitHeight = 589
       inherited btnImagem: TButton
         OnClick = frameMensagem1btnImagemClick
       end
     end
-    inherited GroupBox2: TGroupBox
+    inherited gbAcoesChats: TScrollBox
       Height = 589
       ExplicitHeight = 589
       inherited btnLimparConversa: TButton
-        ExplicitTop = 237
+        Width = 204
+        ExplicitWidth = 204
       end
       inherited btnArquivar: TButton
-        ExplicitTop = 175
+        Width = 204
+        ExplicitWidth = 204
+      end
+      inherited btnResponder: TButton
+        Width = 204
+        ExplicitWidth = 204
+      end
+      inherited btnReagir: TButton
+        Width = 204
+        ExplicitWidth = 204
       end
       inherited btnVerificarNumero: TButton
-        ExplicitTop = 268
+        Width = 204
+        ExplicitWidth = 204
       end
       inherited btnStatus: TButton
-        ExplicitTop = 299
+        Width = 204
+        ExplicitWidth = 204
       end
       inherited btnDetalhe: TButton
-        ExplicitLeft = 5
+        Width = 204
+        ExplicitWidth = 204
+      end
+      inherited btnBloquear: TButton
+        Width = 204
+        ExplicitWidth = 204
+      end
+      inherited btnDesbloquear: TButton
+        Width = 204
+        ExplicitWidth = 204
+      end
+      inherited btnFixarChat: TButton
+        Width = 204
+        ExplicitWidth = 204
+      end
+      inherited btnDesfixarChat: TButton
+        Width = 204
+        ExplicitWidth = 204
       end
       inherited BitBtn1: TButton
-        ExplicitTop = 206
+        Width = 204
+        ExplicitWidth = 204
+      end
+      inherited BitBtn2: TButton
+        Width = 204
+        ExplicitWidth = 204
+      end
+      inherited btnArquivarTodosChats: TButton
+        Width = 204
+        ExplicitWidth = 204
+      end
+      inherited btnDeletarTodosChats: TButton
+        Width = 204
+        ExplicitWidth = 204
+      end
+      inherited Button1: TButton
+        Width = 204
+        ExplicitWidth = 204
+      end
+      inherited btnValidarListarNumeros: TButton
+        Width = 204
+        ExplicitWidth = 204
+      end
+      inherited btnGetMessage: TButton
+        Width = 204
+        ExplicitWidth = 204
+      end
+      inherited Button3: TButton
+        Width = 204
+        ExplicitWidth = 204
+      end
+      inherited Button4: TButton
+        Width = 204
+        ExplicitWidth = 204
+      end
+      inherited bEditMessage: TButton
+        Width = 204
+        ExplicitWidth = 204
+      end
+      inherited btnDeletarOldChat: TButton
+        Width = 204
+        ExplicitWidth = 204
+      end
+      inherited bGetMe: TButton
+        Width = 204
+        ExplicitWidth = 204
+      end
+      inherited bGetMensagem: TButton
+        Width = 204
+        ExplicitWidth = 204
       end
     end
     inherited GroupBox3: TGroupBox
@@ -1987,20 +2102,16 @@ object frDemo: TfrDemo
               Width = 448
             end
             inherited listaParticipantes: TListView
-              Top = 85
               Width = 414
-              Height = 330
-              ExplicitTop = 85
+              Height = 327
               ExplicitWidth = 414
-              ExplicitHeight = 330
+              ExplicitHeight = 327
             end
             inherited pnlParticipantesBotoes: TPanel
               Left = 422
-              Top = 82
-              Height = 336
+              Height = 333
               ExplicitLeft = 422
-              ExplicitTop = 82
-              ExplicitHeight = 336
+              ExplicitHeight = 333
             end
             inherited pnltopopartici: TPanel
               Width = 448
@@ -2016,7 +2127,7 @@ object frDemo: TfrDemo
     Top = 82
     Width = 150
     Height = 25
-    Caption = 'Reiniciar WhatsApp Web'
+    Caption = 'Reboot WhatsApp Web'
     TabOrder = 10
     OnClick = BitBtn1Click
   end
@@ -2071,8 +2182,8 @@ object frDemo: TfrDemo
           end
         end
         inherited Memo1: TMemo
-          Left = 92
-          ExplicitLeft = 92
+          Top = 368
+          ExplicitTop = 368
         end
       end
       inherited pnlGruposParticipantes: TPanel
@@ -2102,20 +2213,16 @@ object frDemo: TfrDemo
               Width = 448
             end
             inherited listaParticipantes: TListView
-              Top = 85
               Width = 414
-              Height = 330
-              ExplicitTop = 85
+              Height = 327
               ExplicitWidth = 414
-              ExplicitHeight = 330
+              ExplicitHeight = 327
             end
             inherited pnlParticipantesBotoes: TPanel
               Left = 422
-              Top = 82
-              Height = 336
+              Height = 333
               ExplicitLeft = 422
-              ExplicitTop = 82
-              ExplicitHeight = 336
+              ExplicitHeight = 333
             end
             inherited pnltopopartici: TPanel
               Width = 448
@@ -2125,14 +2232,22 @@ object frDemo: TfrDemo
         end
       end
     end
+    inherited ImageList1: TImageList
+      Left = 848
+      Top = 7
+    end
+    inherited OpenPictureDialog1: TOpenPictureDialog
+      Left = 748
+      Top = 6
+    end
   end
   object ImageList1: TImageList
     ColorDepth = cd32Bit
     DrawingStyle = dsTransparent
     Height = 48
     Width = 48
-    Left = 488
-    Top = 104
+    Left = 1096
+    Top = 8
     Bitmap = {
       494C010109001800040030003000FFFFFFFF2110FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000C000000090000000010020000000000000B0
@@ -5710,10 +5825,20 @@ object frDemo: TfrDemo
     InjectJS.JSURL = 
       'https://raw.githubusercontent.com/wppconnect-team/WPP4Delphi/mai' +
       'n/Source/JS/js.abr'
-    InjectJS.SecondsWaitInject = 4
-    Config.AutoStart = True
-    Config.AutoDelay = 1000
-    Config.SecondsMonitorNew = 5
+    InjectJS.DownloadJSType = DT_Indy
+    Config.AutoDelay = 500
+    Config.ReceiveAttachmentAuto = False
+    Config.ReceiveAttachmentPath = 'C:\Executaveis\TWPPConnectAnexos\'
+    Config.Evento_msg_ack_change = True
+    Config.Evento_msg_revoke = True
+    Config.Evento_new_message = True
+    Config.Evento_new_reaction = True
+    Config.Evento_active_chat = True
+    Config.Evento_presence_change = True
+    Config.Evento_update_label = True
+    Config.Evento_group_participant_changed = True
+    Config.Evento_order_payment_status = True
+    Config.Evento_live_location_start = True
     AjustNumber.LengthPhone = 8
     AjustNumber.DDIDefault = 55
     FormQrCodeType = Ft_Http
@@ -5722,9 +5847,11 @@ object frDemo: TfrDemo
     OnGetAllGroupList = TWPPConnect1GetAllGroupList
     OnGetAllCommunitys = TWPPConnect1GetAllCommunitys
     OnGetAllGroupAdmins = TWPPConnect1GetAllGroupAdmins
+    OnAfterInjectJS = TWPPConnect1AfterInjectJS
     OnGetQrCode = TWPPConnect1GetQrCode
     OnGetChatList = TWPPConnect1GetChatList
     OnGetUnReadMessages = TWPPConnect1GetUnReadMessages
+    OnGetMessages = TWPPConnect1GetMessages
     OnGetAllGroupContacts = TWPPConnect1GetAllGroupContacts
     OnGetStatus = TWPPConnect1GetStatus
     OnGetMessageById = TWPPConnect1GetMessageById
@@ -5739,13 +5866,18 @@ object frDemo: TfrDemo
     OnGet_ProductCatalog = TWPPConnect1Get_ProductCatalog
     OnWPPMonitorCrash = TWPPConnect1WPPMonitorCrash
     OnGetIncomingiCall = TWPPConnect1GetIncomingiCall
+    OnGetOutgoingCall = TWPPConnect1GetOutgoingCall
     OnGetIsReady = TWPPConnect1GetIsReady
     OnGetIsLoaded = TWPPConnect1GetIsLoaded
     OnGetIsAuthenticated = TWPPConnect1GetIsAuthenticated
+    OnGetIsLogout = TWPPConnect1GetIsLogout
+    OnGetEnvrequire_auth = TWPPConnect1GetEnvrequire_auth
     OnGetIsOnline = TWPPConnect1GetIsOnline
     OnGetEnvIsOnline = TWPPConnect1GetEnvIsOnline
+    OnGetEnvneedsUpdate = TWPPConnect1GetEnvneedsUpdate
     OnGetListChat = TWPPConnect1GetListChat
     OnGetMessageACK = TWPPConnect1GetMessageACK
+    OnRetErrorWhiteScreen = TWPPConnect1RetErrorWhiteScreen
     OnGetCheckIsValidNumber = TWPPConnect1GetCheckIsValidNumber
     OnGetProfilePicThumb = TWPPConnect1GetProfilePicThumb
     OnGetMyNumber = TWPPConnect1GetMyNumber
@@ -5767,48 +5899,75 @@ object frDemo: TfrDemo
     OnGet_SendPollMessageResponse = TWPPConnect1Get_SendPollMessageResponse
     OnGetAck_changeEvento = TWPPConnect1GetAck_changeEvento
     OnGetmsg_revokeEvento = TWPPConnect1Getmsg_revokeEvento
+    OnGetmsg_EditedEvento = TWPPConnect1Getmsg_EditedEvento
+    OnGetTotalChatsUserRead = TWPPConnect1GetTotalChatsUserRead
+    OnGetWAVersion = TWPPConnect1GetWAVersion
+    OnGetlogout_reason = TWPPConnect1Getlogout_reason
+    OnGetactive_chat = TWPPConnect1Getactive_chat
+    OnGetpresence_change = TWPPConnect1Getpresence_change
+    OnGetupdate_label = TWPPConnect1Getupdate_label
+    OnGetgroup_participant_changed = TWPPConnect1Getgroup_participant_changed
+    OnGetorder_payment_status = TWPPConnect1Getorder_payment_status
+    OnGetlive_location_start = TWPPConnect1Getlive_location_start
+    OnGetAllParticipantsGroup = TWPPConnect1GetAllParticipantsGroup
+    OnGetgenLinkDeviceCodeForPhoneNumber = TWPPConnect1GetgenLinkDeviceCodeForPhoneNumber
     OnGetHistorySyncProgress = TWPPConnect1GetHistorySyncProgress
     OnGetQrCodeDesconectouErroCache = TWPPConnect1GetQrCodeDesconectouErroCache
-    Left = 288
-    Top = 480
+    OnGet_ErrorResponse = TWPPConnect1Get_ErrorResponse
+    OnGet_deleteMessageNewResponse = TWPPConnect1Get_deleteMessageNewResponse
+    OnGet_editMessageNewResponse = TWPPConnect1Get_editMessageNewResponse
+    Left = 298
+    Top = 8
   end
   object timerStatus: TTimer
     Enabled = False
-    Interval = 500
     OnTimer = timerStatusTimer
-    Left = 440
-    Top = 32
+    Left = 452
+    Top = 8
   end
   object TimerVerificaConexao: TTimer
-    Interval = 40000
+    Interval = 50000
     OnTimer = TimerVerificaConexaoTimer
-    Left = 528
-    Top = 32
+    Left = 544
+    Top = 8
   end
   object TimerCheckOnline: TTimer
     Interval = 60000
     OnTimer = TimerCheckOnlineTimer
-    Left = 632
-    Top = 32
+    Left = 636
+    Top = 8
   end
   object TimerCopiarPastaCache: TTimer
     Enabled = False
     Interval = 120000
     OnTimer = TimerCopiarPastaCacheTimer
-    Left = 736
-    Top = 16
+    Left = 728
+    Top = 8
   end
   object TimerRestauraPastaCache: TTimer
     Enabled = False
     Interval = 30000
     OnTimer = TimerRestauraPastaCacheTimer
-    Left = 872
+    Left = 820
     Top = 8
   end
   object TimerProgress: TTimer
     Enabled = False
     OnTimer = TimerProgressTimer
-    Left = 848
-    Top = 168
+    Left = 1004
+    Top = 8
+  end
+  object TimerBegin: TTimer
+    Interval = 7000
+    OnTimer = TimerBeginTimer
+    Left = 912
+    Top = 8
+  end
+  object TimerIsOnline: TTimer
+    Enabled = False
+    Interval = 40000
+    OnTimer = TimerIsOnlineTimer
+    Left = 384
+    Top = 8
   end
 end
