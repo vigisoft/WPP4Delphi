@@ -3689,7 +3689,9 @@ begin
   FInjectWorking := False;
   try
     try
-      lAJsonObj := TJSONObject.ParseJSONValue(TEncoding.UTF8.GetBytes(pAJsonString), 0) as TJSONObject;
+      if pAJsonString.Trim.IsEmpty then Exit;
+      
+      lAJsonObj := TJSONObject.ParseJSONValue(TEncoding.UTF8.GetBytes(pAJsonString.Trim), 0) as TJSONObject;
 
       if NOT Assigned(lAJsonObj) then
         Exit;
