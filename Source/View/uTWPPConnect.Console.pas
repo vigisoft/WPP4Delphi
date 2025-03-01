@@ -747,7 +747,10 @@ begin
           TThread.Synchronize(nil, procedure
           begin
             if Assigned(FrmConsole) then
+              try
                FrmConsole.Chromium1.Browser.MainFrame.ExecuteJavaScript(PScript, Purl, pStartline)
+              except
+              end;
           end);
         end);
      lThread.Start;
