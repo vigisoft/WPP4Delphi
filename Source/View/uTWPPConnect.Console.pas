@@ -13,6 +13,9 @@
 
 ####################################################################################################################
 }
+
+{$DEFINE CEFCurrentVersion}
+
 unit uTWPPConnect.Console;
 {$I TWPPConnectDiretiva.inc}
 
